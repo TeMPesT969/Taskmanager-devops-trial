@@ -4,8 +4,8 @@ pipeline {
     environment {
         FRONTEND_IMAGE="mern-frontend:jenkins"
         BACKEND_IMAGE="mern-backend:jenkins"
-        PORT="5000"
-        MONGO_URI="mongodb://mongo:27017/taskdb"
+        MONGO_URI = credentials('mongo-uri')
+        PORT = credentials('app-port')
     }
 
     stages {
